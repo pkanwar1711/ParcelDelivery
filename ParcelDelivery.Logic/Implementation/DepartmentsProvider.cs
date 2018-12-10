@@ -17,7 +17,7 @@ namespace ParcelDelivery.Logic.Implementation
             }
 
             var selectedDepartment =
-                departments.FirstOrDefault(d => d.WeightLimit <= parcel.Weight && d.Value <= parcel.Value);
+                departments.FirstOrDefault(d =>d.WeightMin<=parcel.Weight && (d.WeightMax >= parcel.Weight || d.WeightMax!=null));
             if (selectedDepartment == null)
             {
                 throw new Exception("Department not found");

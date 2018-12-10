@@ -4,7 +4,8 @@ namespace ParcelDelivery.Logic.Contract
 {
     public interface IDepartments
     {
-        double WeightLimit { get; set; }
+        double WeightMin { get; set; }
+        double? WeightMax { get; set; }
         string Name { get; set; }
         double Value { get; set; }
 

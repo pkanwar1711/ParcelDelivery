@@ -8,13 +8,12 @@ namespace ParcelDelivery.Logic.Tests
     public class DepartmentProviderLogicTest
     {
         private readonly DepartmentsProvider _departmentsProvider;
-        
+
         public DepartmentProviderLogicTest()
         {
-            _departmentsProvider= new DepartmentsProvider();
+            _departmentsProvider = new DepartmentsProvider();
         }
 
-        
 
         [Fact]
         public void DepartmentProvider_Handle_ShouldReturnMailDepartmentObjectIfWeightUp1Kg()
@@ -23,15 +22,37 @@ namespace ParcelDelivery.Logic.Tests
             parcel.Weight = 0.5;
             parcel.Value = 0;
             var department = _departmentsProvider.Departments(parcel);
-            Assert.Same(typeof(MailDepartment), department);
+            Assert.IsType<MailDepartment>(department);
         }
 
-
-
-
-        private void RegisterService()
+        [Fact]
+        public void DepartmentProvider_Handle_ShouldReturnRegularDepartmentObjectIfWeightUpTo10Kg()
         {
+            var parcel = new Parcel();
+            parcel.Weight = 5;
+            parcel.Value = 0;
+            var department = _departmentsProvider.Departments(parcel);
+            Assert.IsType<RegularDepartment>(department);
+        }
 
+        [Fact]
+        public void DepartmentProvider_Handle_ShouldReturnHeavyDepartmentObjectIfWeightMoreThen10Kg()
+        {
+            var parcel = new Parcel();
+            parcel.Weight = 11;
+            parcel.Value = 0;
+            var department = _departmentsProvider.Departments(parcel);
+            Assert.IsType<HeavyDepartment>(department);
+        }
+
+        [Fact]
+        public void DepartmentProvider_Handle_ShouldReturnHeavyDepartmentObjectIfWeightIs20Kg()
+        {
+            var parcel = new Parcel();
+            parcel.Weight = 20;
+            parcel.Value = 0;
+            var department = _departmentsProvider.Departments(parcel);
+            Assert.IsType<HeavyDepartment>(department);
         }
     }
 }
