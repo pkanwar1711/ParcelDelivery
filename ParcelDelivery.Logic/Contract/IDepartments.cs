@@ -4,8 +4,10 @@ namespace ParcelDelivery.Logic.Contract
 {
     public interface IDepartments
     {
-        decimal WeightLimit { get; set; }
+        double WeightLimit { get; set; }
         string Name { get; set; }
+        double Value { get; set; }
+
         void Handle(Parcel parcel);
     }
 }

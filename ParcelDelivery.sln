@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelDelivery.Logic", "Par
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelDelivery.Dto", "ParcelDelivery.Dtos\ParcelDelivery.Dto.csproj", "{6E53F715-58D4-4F8C-AC85-A74C5A0D2562}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelDelivery.Common", "ParcelDelivery.Common\ParcelDelivery.Common.csproj", "{7101D8D5-7937-4B69-BA60-161E2B719E61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{6E53F715-58D4-4F8C-AC85-A74C5A0D2562}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E53F715-58D4-4F8C-AC85-A74C5A0D2562}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E53F715-58D4-4F8C-AC85-A74C5A0D2562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7101D8D5-7937-4B69-BA60-161E2B719E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7101D8D5-7937-4B69-BA60-161E2B719E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7101D8D5-7937-4B69-BA60-161E2B719E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7101D8D5-7937-4B69-BA60-161E2B719E61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

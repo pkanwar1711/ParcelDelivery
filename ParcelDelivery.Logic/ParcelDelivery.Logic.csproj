@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ParcelDelivery.Common\ParcelDelivery.Common.csproj" />
     <ProjectReference Include="..\ParcelDelivery.Dtos\ParcelDelivery.Dto.csproj" />
   </ItemGroup>
 
