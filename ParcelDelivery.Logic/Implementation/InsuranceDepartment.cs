@@ -4,19 +4,19 @@ using System;
 
 namespace ParcelDelivery.Logic.Implementation
 {
-    public class MailDepartment : IDepartments
+    public class InsuranceDepartment : IDepartments
     {
         public double? WeightMin { get; set; }
         public double? WeightMax { get; set; }
         public string Name { get; set; }
         public double Value { get; set; }
 
-        public MailDepartment()
+        public InsuranceDepartment()
         {
-            WeightMin = 0;
-            WeightMax = 1;
-            Value = 0;
-            Name = "Mail";
+            WeightMin = null;
+            WeightMax = null;
+            Value = 2000;
+            Name = "Insurance";
         }
 
         public void Handle(Parcel parcel)

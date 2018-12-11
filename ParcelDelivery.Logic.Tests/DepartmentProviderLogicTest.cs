@@ -54,5 +54,15 @@ namespace ParcelDelivery.Logic.Tests
             var department = _departmentsProvider.Departments(parcel);
             Assert.IsType<HeavyDepartment>(department);
         }
+
+        [Fact]
+        public void DepartmentProvider_Handle_ShouldReturnHeavyDepartmentObjectIfValueIs2000()
+        {
+            var parcel = new Parcel();
+            parcel.Weight = 20;
+            parcel.Value = 2000;
+            var department = _departmentsProvider.Departments(parcel);
+            Assert.IsType<HeavyDepartment>(department);
+        }
     }
 }
