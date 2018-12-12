@@ -11,7 +11,9 @@ namespace ParcelDelivery.Logic.Implementation
         public IDepartments Departments(Parcel parcel)
         {
             IDepartments selectedDepartment = null;
+
             var departments = ObjectProvider.GetAllTypesOf<IDepartments>();
+
             if (!departments.Any())
             {
                 throw new Exception("Department not found");
@@ -22,12 +24,14 @@ namespace ParcelDelivery.Logic.Implementation
                 if (parcel.Weight > department.WeightMin && parcel.Weight < department.WeightMax)
                 {
                     selectedDepartment = department;
+                    break;
                 }
 
 
                 if (parcel.Weight > department.WeightMin && department.WeightMax ==null)
                 {
                     selectedDepartment = department;
+                    break;
                 }
 
                 if (parcel.Value > department.Value && department.WeightMax ==null && department.WeightMin == null)

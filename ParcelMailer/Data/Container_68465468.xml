@@ -2,7 +2,7 @@
 <Container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Id>68465468</Id>
   <ShippingDate>2016-07-22T00:00:00+02:00</ShippingDate>
-  <parcels>
+  <Parcels>
     <Parcel>
       <Sender>
         <Name>Klaas</Name>
@@ -93,5 +93,6 @@
       <Weight>11</Weight>
       <Value>500</Value>
     </Parcel>
-  </parcels>
+
+  </Parcels>
 </Container>

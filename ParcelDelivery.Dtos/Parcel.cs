@@ -1,16 +1,18 @@
-﻿namespace ParcelDelivery.Dto
+﻿using System.Xml.Serialization;
+
+namespace ParcelDelivery.Dto
 {
     public class Parcel
     {
         public Parcel()
         {
-            Sender = new User("sender");
-            Recipient = new User("Recipient");
+            Sender = new User();
+            Receipient = new User();
         }
 
         public User Sender { get; set; }
 
-        public User Recipient { get; set; }
+        public User Receipient { get; set; }
 
         public double Weight { get; set; }
 

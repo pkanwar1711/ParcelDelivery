@@ -7,7 +7,7 @@ namespace ParcelDelivery.Dto
     {
         public Container()
         {
-            Parcels= new List<Parcel>();
+            Parcels = new List<Parcel>();
         }
         public long Id { get; set; }
 

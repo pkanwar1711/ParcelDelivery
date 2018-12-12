@@ -2,13 +2,11 @@
 {
     public class User
     {
-        public User(string type)
+        public User()
         {
-            Type = type;
             Address= new Address();
         }
 
-        public string Type { get; }
 
         public string Name { get; set; }
 

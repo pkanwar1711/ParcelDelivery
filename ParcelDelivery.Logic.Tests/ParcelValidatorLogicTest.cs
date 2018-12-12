@@ -25,24 +25,24 @@ namespace ParcelDelivery.Logic.Tests
         public void ParcelValidatorLogic_ValidateParcelRecipient_ShouldThrowExceptionIfParcelRecipientIsNull()
         {
             var parcel = new Parcel();
-            parcel.Recipient = null;
-            Assert.Throws<ArgumentNullException>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Recipient));
+            parcel.Receipient = null;
+            Assert.Throws<ArgumentNullException>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Receipient));
         }
 
         [Fact]
         public void ParcelValidatorLogic_ValidateParcelRecipient_ShouldThrowExceptionIfParcelRecipientNameIsNull()
         {
             var parcel = new Parcel();
-            parcel.Recipient.Name = null;
-            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Recipient));
+            parcel.Receipient.Name = null;
+            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Receipient));
         }
 
         [Fact]
         public void ParcelValidatorLogic_ValidateParcelRecipient_ShouldThrowExceptionIfParcelRecipientAddressIsNull()
         {
             var parcel = new Parcel();
-            parcel.Recipient.Address = null;
-            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Recipient));
+            parcel.Receipient.Address = null;
+            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Receipient));
         }
 
         [Fact]
@@ -50,8 +50,10 @@ namespace ParcelDelivery.Logic.Tests
             ParcelValidatorLogic_ValidateParcelRecipient_ShouldThrowExceptionIfParcelRecipientAddressHouseNumberIsNull()
         {
             var parcel = new Parcel();
-            parcel.Recipient.Address.HouseNumber = null;
-            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Recipient));
+            parcel.Receipient.Name = "Name";
+            parcel.Receipient.Address.City = "City";
+            parcel.Receipient.Address.HouseNumber = null;
+            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Receipient));
         }
 
         [Fact]
@@ -59,8 +61,8 @@ namespace ParcelDelivery.Logic.Tests
             ParcelValidatorLogic_ValidateParcelRecipient_ShouldThrowExceptionIfParcelRecipientAddressCityIsNull()
         {
             var parcel = new Parcel();
-            parcel.Recipient.Address.City = null;
-            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Recipient));
+            parcel.Receipient.Address.City = null;
+            Assert.Throws<Exception>(() => _ParcelValidatorLogic.ValidateParcelUser(parcel.Receipient));
         }
 
         [Fact]

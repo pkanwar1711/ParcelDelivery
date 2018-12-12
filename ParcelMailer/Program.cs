@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Linq;
+using System.Xml.Serialization;
 using ParcelDelivery.Dto;
 
 namespace ParcelMailer
@@ -18,7 +19,7 @@ namespace ParcelMailer
                 .AddSingleton<IDepartmentsProvider, DepartmentsProvider>()
                 .BuildServiceProvider();
 
-           
+
             var departmentsProvider = serviceProvider.GetService<IDepartmentsProvider>();
             var container = ReadData();
 
@@ -28,14 +29,16 @@ namespace ParcelMailer
                 Console.Read();
                 return;
             }
+            Console.WriteLine($"Parcel status:\n");
 
             foreach (var parcel in container.Parcels)
             {
                 var department = departmentsProvider.Departments(parcel);
                 var parcelStatus = department.Handle(parcel);
-                Console.WriteLine($"Parcel status");
+                Console.WriteLine($"Sender: {parcel.Sender.Name}, Receipient: {parcel.Receipient.Name}");
                 Console.WriteLine(
-                    $"{parcelStatus.Parcel.Weight},{parcelStatus.Parcel.Value} is deliver to {parcelStatus.Department}");
+                    $"{parcelStatus.Parcel.Weight} Kg., {parcelStatus.Parcel.Value}$ is deliver to {parcelStatus.Department}");
+                Console.WriteLine($"========================================================================================");
             }
 
             Console.Read();
@@ -51,11 +54,16 @@ namespace ParcelMailer
 
             var doc = new XmlDocument();
             doc.Load(path);
-            var container = new Container();
-            container.Id = Convert.ToInt64(doc.GetElementsByTagName("Id").Item(0)?.InnerText);
-            container.ShippingDate = Convert.ToDateTime(doc.GetElementsByTagName("ShippingDate").Item(0)?.InnerText);
-            var parcels = doc.GetElementsByTagName("Parcel");
-            return container;
+
+            using (TextReader textReader = new StringReader(doc.OuterXml))
+            {
+                using (XmlTextReader reader = new XmlTextReader(textReader))
+                {
+                    reader.Namespaces = false;
+                    XmlSerializer serializer = new XmlSerializer(typeof(Container));
+                    return (Container) serializer.Deserialize(reader);
+                }
+            }
         }
     }
 }

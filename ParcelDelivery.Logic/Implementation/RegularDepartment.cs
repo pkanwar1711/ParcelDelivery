@@ -25,7 +25,7 @@ namespace ParcelDelivery.Logic.Implementation
         public ParcelStatus Handle(Parcel parcel)
         {
             _parcelValidatorLogic.ValidateParcel(parcel);
-            _parcelValidatorLogic.ValidateParcelUser(parcel.Recipient);
+            _parcelValidatorLogic.ValidateParcelUser(parcel.Receipient);
             _parcelValidatorLogic.ValidateParcelUser(parcel.Sender);
             return new ParcelStatus
             {

@@ -18,9 +18,9 @@ namespace ParcelDelivery.Logic.Tests
         {
             var parcel = new Parcel
             {
-                Recipient = new User("Recipient")
+                Receipient = new User()
                 {
-                    Name = "R. Recipient",
+                    Name = "R. Receipient",
                     Address = new Address
                     {
                         City = "New Delhi",
@@ -29,7 +29,7 @@ namespace ParcelDelivery.Logic.Tests
                         Street = "20"
                     }
                 },
-                Sender = new User("Sender")
+                Sender = new User()
                 {
                     Name = "S. serder",
                     Address = new Address
