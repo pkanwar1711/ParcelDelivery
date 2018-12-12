@@ -37,7 +37,7 @@ namespace ParcelMailer
                 Console.WriteLine($"Sender: {parcel.Sender.Name}, Receipient: {parcel.Receipient.Name}");
                 Console.WriteLine(
                     $"{parcelStatus.Parcel.Weight} Kg., {parcelStatus.Parcel.Value}$ is deliver to {parcelStatus.Department}");
-                Console.WriteLine($"========================================================================================");
+                Console.WriteLine($"========================================================================================\n");
             }
 
             Console.Read();
