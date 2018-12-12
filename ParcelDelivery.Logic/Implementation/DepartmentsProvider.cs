@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ParcelDelivery.Logic.Implementation
 {
-    public class DepartmentsProvider
+    public class DepartmentsProvider: IDepartmentsProvider
     {
         public IDepartments Departments(Parcel parcel)
         {

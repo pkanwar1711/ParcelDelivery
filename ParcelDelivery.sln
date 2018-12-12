@@ -5,13 +5,15 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D89CE7A6-B93E-40E5-91C3-4D3A4C2304A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelDelivery.Logic.Tests", "ParcelDelivery.Logic.Tests\ParcelDelivery.Logic.Tests.csproj", "{6EA843A7-70CB-4D07-93FC-6D4CDF181983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParcelDelivery.Logic.Tests", "ParcelDelivery.Logic.Tests\ParcelDelivery.Logic.Tests.csproj", "{6EA843A7-70CB-4D07-93FC-6D4CDF181983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelDelivery.Logic", "ParcelDelivery.Logic\ParcelDelivery.Logic.csproj", "{650CEF1F-A19A-4A64-903F-62FE09E331BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParcelDelivery.Logic", "ParcelDelivery.Logic\ParcelDelivery.Logic.csproj", "{650CEF1F-A19A-4A64-903F-62FE09E331BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelDelivery.Dto", "ParcelDelivery.Dtos\ParcelDelivery.Dto.csproj", "{6E53F715-58D4-4F8C-AC85-A74C5A0D2562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParcelDelivery.Dto", "ParcelDelivery.Dtos\ParcelDelivery.Dto.csproj", "{6E53F715-58D4-4F8C-AC85-A74C5A0D2562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelDelivery.Common", "ParcelDelivery.Common\ParcelDelivery.Common.csproj", "{7101D8D5-7937-4B69-BA60-161E2B719E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParcelDelivery.Common", "ParcelDelivery.Common\ParcelDelivery.Common.csproj", "{7101D8D5-7937-4B69-BA60-161E2B719E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelMailer", "ParcelMailer\ParcelMailer.csproj", "{215993E1-AC78-435B-B24B-21E858E7FC3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{7101D8D5-7937-4B69-BA60-161E2B719E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7101D8D5-7937-4B69-BA60-161E2B719E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7101D8D5-7937-4B69-BA60-161E2B719E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{215993E1-AC78-435B-B24B-21E858E7FC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{215993E1-AC78-435B-B24B-21E858E7FC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{215993E1-AC78-435B-B24B-21E858E7FC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{215993E1-AC78-435B-B24B-21E858E7FC3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

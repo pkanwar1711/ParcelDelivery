@@ -10,18 +10,27 @@ namespace ParcelDelivery.Logic.Implementation
         public double? WeightMax { get; set; }
         public string Name { get; set; }
         public double Value { get; set; }
+        private readonly IParcelValidatorLogic _parcelValidatorLogic;
 
         public HeavyDepartment()
         {
+            _parcelValidatorLogic = new ParcelValidatorLogic();
             WeightMin = 10;
             WeightMax = null;
             Value = 0;
             Name = "Heavy";
         }
 
-        public void Handle(Parcel parcel)
+        public ParcelStatus Handle(Parcel parcel)
         {
-            throw new NotImplementedException();
+            _parcelValidatorLogic.ValidateParcel(parcel);
+            _parcelValidatorLogic.ValidateParcelUser(parcel.Recipient);
+            _parcelValidatorLogic.ValidateParcelUser(parcel.Sender);
+            return new ParcelStatus
+            {
+                Parcel = parcel,
+                Department = Name
+            };
         }
     }
 }

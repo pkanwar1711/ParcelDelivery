@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\Container_68465468.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\Container_68465468.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ParcelDelivery.Common\ParcelDelivery.Common.csproj" />
+    <ProjectReference Include="..\ParcelDelivery.Dtos\ParcelDelivery.Dto.csproj" />
+    <ProjectReference Include="..\ParcelDelivery.Logic\ParcelDelivery.Logic.csproj" />
+  </ItemGroup>
+
+</Project>

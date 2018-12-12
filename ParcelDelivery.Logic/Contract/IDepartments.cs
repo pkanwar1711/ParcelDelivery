@@ -6,9 +6,9 @@ namespace ParcelDelivery.Logic.Contract
     {
         double? WeightMin { get; set; }
         double? WeightMax { get; set; }
-        string Name { get; set; }
+        string Name { get;  }
         double Value { get; set; }
 
-        void Handle(Parcel parcel);
+        ParcelStatus Handle(Parcel parcel);
     }
 }

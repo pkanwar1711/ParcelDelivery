@@ -1,6 +1,5 @@
 ﻿using ParcelDelivery.Dto;
 using ParcelDelivery.Logic.Contract;
-using System;
 
 namespace ParcelDelivery.Logic.Implementation
 {
@@ -8,20 +7,30 @@ namespace ParcelDelivery.Logic.Implementation
     {
         public double? WeightMin { get; set; }
         public double? WeightMax { get; set; }
-        public string Name { get; set; }
+        public string Name { get; }
         public double Value { get; set; }
+
+        private readonly IParcelValidatorLogic _parcelValidatorLogic;
 
         public MailDepartment()
         {
+            _parcelValidatorLogic = new ParcelValidatorLogic();
             WeightMin = 0;
             WeightMax = 1;
             Value = 0;
             Name = "Mail";
         }
 
-        public void Handle(Parcel parcel)
+        public ParcelStatus Handle(Parcel parcel)
         {
-            throw new NotImplementedException();
+            _parcelValidatorLogic.ValidateParcel(parcel);
+            _parcelValidatorLogic.ValidateParcelUser(parcel.Recipient);
+            _parcelValidatorLogic.ValidateParcelUser(parcel.Sender);
+            return new ParcelStatus
+            {
+                Parcel = parcel,
+                Department = Name
+            };
         }
     }
 }

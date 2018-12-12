@@ -38,7 +38,31 @@ namespace ParcelDelivery.Logic.Tests
         [Fact]
         public void DepartmentProvider_Handle_ShouldReturnHeavyDepartmentObjectIfWeightMoreThen10Kg()
         {
-            var parcel = new Parcel();
+            var parcel = new Parcel
+            {
+                Recipient = new User("Recipient")
+                {
+                    Name = "R. Recipient",
+                    Address = new Address
+                    {
+                        City = "New Delhi",
+                        HouseNumber = "#3",
+                        PostalCode = "IN0090",
+                        Street = "20"
+                    }
+                },
+                Sender = new User("Sender")
+                {
+                    Name = "S. serder",
+                    Address = new Address
+                    {
+                        City = "gurgaon",
+                        HouseNumber = "388",
+                        PostalCode = "IN007",
+                        Street = "6"
+                    }
+                },
+            };
             parcel.Weight = 11;
             parcel.Value = 0;
             var department = _departmentsProvider.Departments(parcel);
@@ -58,7 +82,31 @@ namespace ParcelDelivery.Logic.Tests
         [Fact]
         public void DepartmentProvider_Handle_ShouldReturnHeavyDepartmentObjectIfValueIs2000()
         {
-            var parcel = new Parcel();
+            var parcel = new Parcel()
+            {
+                Recipient = new User("Recipient")
+                {
+                    Name = "R. Recipient",
+                    Address = new Address
+                    {
+                        City = "New Delhi",
+                        HouseNumber = "#3",
+                        PostalCode = "IN0090",
+                        Street = "20"
+                    }
+                },
+                Sender = new User("Sender")
+                {
+                    Name = "S. serder",
+                    Address = new Address
+                    {
+                        City = "gurgaon",
+                        HouseNumber = "388",
+                        PostalCode = "IN007",
+                        Street = "6"
+                    }
+                },
+            };
             parcel.Weight = 20;
             parcel.Value = 2000;
             var department = _departmentsProvider.Departments(parcel);
