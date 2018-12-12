@@ -15,7 +15,7 @@ namespace ParcelMailer
         static void Main()
         {
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<IDepartmentsProvider, DepartmentsProvider>()
+                .AddTransient<IDepartmentsProvider, DepartmentsProvider>()
                 .BuildServiceProvider();
 
 
@@ -28,8 +28,8 @@ namespace ParcelMailer
                 Console.Read();
                 return;
             }
-            Console.WriteLine($"Parcel status:\n");
 
+            Console.WriteLine($"Parcel status:\n");
             foreach (var parcel in container.Parcels)
             {
                 var department = departmentsProvider.Departments(parcel);
