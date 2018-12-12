@@ -12,7 +12,7 @@ namespace ParcelDelivery.Logic.Implementation
         {
             IDepartments selectedDepartment = null;
 
-            var departments = ObjectProvider.GetAllTypesOf<IDepartments>();
+            var departments = ObjectProvider.GetAllTypesOf<IDepartments>().ToList();
 
             if (!departments.Any())
             {

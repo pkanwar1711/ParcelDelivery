@@ -1,19 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using ParcelDelivery.Dto;
 using ParcelDelivery.Logic.Contract;
 using ParcelDelivery.Logic.Implementation;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Xml;
 using System.Linq;
+using System.Xml;
 using System.Xml.Serialization;
-using ParcelDelivery.Dto;
 
 namespace ParcelMailer
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var serviceProvider = new ServiceCollection()
                 .AddSingleton<IDepartmentsProvider, DepartmentsProvider>()
@@ -46,7 +45,7 @@ namespace ParcelMailer
 
         static Container ReadData()
         {
-            var path = System.IO.Path.GetFullPath($"Data/Container_68465468.xml");
+            var path = Path.GetFullPath($"Data/Container_68465468.xml");
             if (!File.Exists(path))
             {
                 throw new Exception("File not found");
